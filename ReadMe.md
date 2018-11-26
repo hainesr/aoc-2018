@@ -1,0 +1,32 @@
+# Advent of Code 2018
+## Robert Haines
+
+My attempt at doing [Advent of Code 2018](http://adventofcode.com/2018) in Ruby, with tests and all the trimmings.
+
+### Usage
+
+After cloning, and changing into the `aoc-2018` directory, run:
+
+```shell
+$ gem install bundler
+$ bundle install
+$ rake
+```
+
+This will set everything up and run all the tests.
+
+To run the solution for a particular day:
+
+```shell
+$ rake run <day>
+```
+
+You can run multiple days like this:
+
+```shell
+$ rake run <day_1> <day_2> ... <day_n>
+```
+
+### Licence
+
+[Public Domain](http://unlicense.org).
