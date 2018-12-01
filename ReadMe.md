@@ -4,6 +4,7 @@
 My attempt at doing [Advent of Code 2018](http://adventofcode.com/2018) in Ruby, with tests and all the trimmings.
 
 [![Build Status](https://travis-ci.org/hainesr/aoc-2018.svg?branch=master)](https://travis-ci.org/hainesr/aoc-2018)
+[![Maintainability](https://api.codeclimate.com/v1/badges/79ce9638f67f5efdcbd4/maintainability)](https://codeclimate.com/github/hainesr/aoc-2018/maintainability)
 
 ### Usage
 
