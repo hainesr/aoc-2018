@@ -7,6 +7,7 @@
 # Public Domain
 
 require 'aoc2018'
+require 'set'
 
 module AOC2018
   class ChronalCalibration < Day
@@ -26,17 +27,13 @@ module AOC2018
 
     def find_repeated_freq(input)
       acc = 0
-      seen = { 0 => true }
+      seen = Set[0]
 
       loop do
         input.each do |freq|
           acc += freq
 
-          if seen[acc]
-            return acc
-          else
-            seen[acc] = true
-          end
+          return acc if seen.add?(acc).nil?
         end
       end
     end
