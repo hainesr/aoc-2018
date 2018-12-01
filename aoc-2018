@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Advent of Code 2018
+#
+# Robert Haines
+#
+# Public Domain
+
+lib = ::File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'aoc2018'
+
+DAY = ARGV[0].to_i
+
+if DAY < 1 || DAY > 25
+  $stderr.puts 'Usage: aoc-2018 <day>'
+  exit 1
+end
+
+day = AOC2018::DAY_MAP[DAY]
+
+require ::File.join('aoc2018', day)
+
+AOC2018.class_from_day(day).new.run
