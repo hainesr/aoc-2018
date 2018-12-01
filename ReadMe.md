@@ -3,6 +3,8 @@
 
 My attempt at doing [Advent of Code 2018](http://adventofcode.com/2018) in Ruby, with tests and all the trimmings.
 
+[![Build Status](https://travis-ci.org/hainesr/aoc-2018.svg?branch=master)](https://travis-ci.org/hainesr/aoc-2018)
+
 ### Usage
 
 After cloning, and changing into the `aoc-2018` directory, run:
