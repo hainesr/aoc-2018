@@ -18,6 +18,12 @@ This will set everything up and run all the tests.
 To run the solution for a particular day:
 
 ```shell
+$ ./aoc-2018 <day>
+```
+
+Or via `rake`:
+
+```shell
 $ rake run <day>
 ```
 
