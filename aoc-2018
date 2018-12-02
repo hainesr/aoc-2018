@@ -15,7 +15,7 @@ require 'aoc2018'
 DAY = ARGV[0].to_i
 
 if DAY < 1 || DAY > 25
-  $stderr.puts 'Usage: aoc-2018 <day>'
+  warn 'Usage: aoc-2018 <day>'
   exit 1
 end
 
@@ -23,7 +23,7 @@ solution = AOC2018::DAY_MAP[DAY]
 
 begin
   require ::File.join('aoc2018', solution)
-rescue
+rescue StandardError
   solution = 'day'
 end
 
