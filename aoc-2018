@@ -19,8 +19,12 @@ if DAY < 1 || DAY > 25
   exit 1
 end
 
-day = AOC2018::DAY_MAP[DAY]
+solution = AOC2018::DAY_MAP[DAY]
 
-require ::File.join('aoc2018', day)
+begin
+  require ::File.join('aoc2018', solution)
+rescue
+  solution = 'day'
+end
 
-AOC2018.class_from_day(day).new.run
+AOC2018.class_from_day(solution).new.run
