@@ -21,6 +21,7 @@ task :run do
   ARGV[1..-1].each do |day|
     day = day.chomp.to_i
     next if day < 1 || day > 25
+
     puts "Advent of Code 2018 day #{day}"
     system "./aoc-2018 #{day}"
   end
