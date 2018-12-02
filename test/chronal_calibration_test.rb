@@ -10,7 +10,6 @@ require 'test_helper'
 require 'aoc2018/chronal_calibration'
 
 class AOC2018::ChronalCalibrationTest < Minitest::Test
-
   def setup
     @cc = ::AOC2018::ChronalCalibration.new
   end
@@ -19,7 +18,7 @@ class AOC2018::ChronalCalibrationTest < Minitest::Test
     assert_equal 3, @cc.add_freqs([1, -2, 3, 1])
     assert_equal 3, @cc.add_freqs([1, 1, 1])
     assert_equal 0, @cc.add_freqs([1, 1, -2])
-    assert_equal -6, @cc.add_freqs([-1, -2, -3])
+    assert_equal(-6, @cc.add_freqs([-1, -2, -3]))
   end
 
   def test_find_repeated_freq
@@ -29,5 +28,4 @@ class AOC2018::ChronalCalibrationTest < Minitest::Test
     assert_equal 5, @cc.find_repeated_freq([-6, 3, 8, 5, -6])
     assert_equal 14, @cc.find_repeated_freq([7, 7, -2, -7, -4])
   end
-
 end

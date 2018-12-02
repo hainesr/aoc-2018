@@ -10,7 +10,6 @@ require 'test_helper'
 require 'aoc2018/inventory_management'
 
 class AOC2018::InventoryManagementTest < Minitest::Test
-
   BOXES_1 = [
     'abcdef',
     'bababc',
@@ -42,5 +41,4 @@ class AOC2018::InventoryManagementTest < Minitest::Test
   def test_common_letters
     assert_equal 'fgij', @im.common_letters(BOXES_2)
   end
-
 end
