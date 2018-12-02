@@ -1,0 +1,14 @@
+inherit_from: .rubocop_todo.yml
+
+# Allow compact style in the tests.
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/**/*'
+
+# Don't require doc comments in general.
+Style/Documentation:
+  Enabled: false
+
+# Use brackets for defining word arrays.
+Style/WordArray:
+  EnforcedStyle: brackets

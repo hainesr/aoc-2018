@@ -10,3 +10,4 @@ source 'https://rubygems.org'
 
 gem 'minitest', '~> 5.11'
 gem 'rake', '~> 12.3'
+gem 'rubocop', '~> 0.60.0'
