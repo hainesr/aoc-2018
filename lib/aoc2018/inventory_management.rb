@@ -10,7 +10,6 @@ require 'aoc2018'
 
 module AOC2018
   class InventoryManagement < Day
-
     def run
       input = read_input_file.split.map(&:chomp)
 
@@ -38,6 +37,5 @@ module AOC2018
         return same.join if same.length == (i.length - 1)
       end
     end
-
   end
 end

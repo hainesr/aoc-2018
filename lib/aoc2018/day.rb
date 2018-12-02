@@ -8,7 +8,6 @@
 
 module AOC2018
   class Day
-
     def run
       puts "This day's puzzle hasn't been solved yet."
     end
@@ -16,16 +15,16 @@ module AOC2018
     private
 
     def read_input_file
-      ::File.read(get_input_file)
+      ::File.read(input_file)
     end
 
-    def get_input_file
+    def input_file
       file = "#{class_snake_case}.txt"
       ::File.join(INPUT_DIR, file)
     end
 
     def class_snake_case
-      ::File.basename(self.method(:run).source_location[0]).split('.')[0]
+      ::File.basename(method(:run).source_location[0]).split('.')[0]
     end
   end
 end

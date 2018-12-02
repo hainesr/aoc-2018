@@ -12,7 +12,6 @@ require 'bundler/setup'
 require 'aoc2018/day'
 
 module AOC2018
-
   INPUT_DIR = ::File.expand_path('../etc', __dir__)
 
   DAY_MAP = [

@@ -11,7 +11,6 @@ require 'set'
 
 module AOC2018
   class ChronalCalibration < Day
-
     def run
       input = read_input_file.split.map do |line|
         line.chomp.to_i
@@ -37,6 +36,5 @@ module AOC2018
         end
       end
     end
-
   end
 end
