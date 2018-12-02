@@ -9,7 +9,9 @@
 module AOC2018
   class Day
 
-    def run; end
+    def run
+      puts "This day's puzzle hasn't been solved yet."
+    end
 
     private
 
