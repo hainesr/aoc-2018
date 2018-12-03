@@ -17,7 +17,8 @@ module AOC2018
   DAY_MAP = [
     nil,
     'chronal_calibration',
-    'inventory_management'
+    'inventory_management',
+    'slice_it'
   ].freeze
 
   def self.class_from_day(day)
