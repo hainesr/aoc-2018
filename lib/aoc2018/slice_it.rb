@@ -13,8 +13,10 @@ module AOC2018
 
     def run
       input = read_input_file.split("\n").map(&:chomp)
+      fabric, overlap_count = overlap(input)
 
-      puts "Part 1: #{overlap(input)[1]}"
+      puts "Part 1: #{overlap_count}"
+      puts "Part 2: #{no_overlaps(input, fabric)}"
     end
 
     def overlap(input)
@@ -39,6 +41,23 @@ module AOC2018
       end
 
       [fabric, overlaps]
+    end
+
+    def no_overlaps(input, fabric)
+      input.each do |line|
+        id, left, right, top, bottom = parse_claim(line)
+        overlaps = false
+
+        (left...right).each do |x|
+          (top...bottom).each do |y|
+            if fabric[x][y] != 1
+              overlaps = true
+            end
+          end
+        end
+
+        return id unless overlaps
+      end
     end
 
     private
