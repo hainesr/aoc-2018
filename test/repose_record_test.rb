@@ -76,4 +76,9 @@ class AOC2018::ReposeRecordTest < Minitest::Test
     records = @rr.merge_records(@rr.parse_records(RECORDS))
     assert_equal 240, @rr.strategy_one(records)
   end
+
+  def test_strategy_two
+    records = @rr.merge_records(@rr.parse_records(RECORDS))
+    assert_equal 4455, @rr.strategy_two(records)
+  end
 end

@@ -16,6 +16,7 @@ module AOC2018
       records = merge_records(parse_records(input))
 
       puts "Part 1: #{strategy_one(records)}"
+      puts "Part 2: #{strategy_two(records)}"
     end
 
     def strategy_one(records)
@@ -29,6 +30,18 @@ module AOC2018
       end
 
       max[0] * max[3]
+    end
+
+    def strategy_two(records)
+      max = [0, -1, 0]
+      records.each do |key, value|
+        m = value.max
+        if m > max[1]
+          max = [key, m, value.index(m)]
+        end
+      end
+
+      max[0] * max[2]
     end
 
     def merge_records(records)
