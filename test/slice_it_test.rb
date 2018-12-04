@@ -21,7 +21,7 @@ class AOC2018::SliceItTest < Minitest::Test
   end
 
   def test_overlap
-    assert_equal 4, @si.overlap(CLAIMS)
+    assert_equal 4, @si.overlap(CLAIMS)[1]
   end
 
 end

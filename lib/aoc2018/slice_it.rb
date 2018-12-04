@@ -14,7 +14,7 @@ module AOC2018
     def run
       input = read_input_file.split("\n").map(&:chomp)
 
-      puts "Part 1: #{overlap(input)}"
+      puts "Part 1: #{overlap(input)[1]}"
     end
 
     def overlap(input)
@@ -38,7 +38,7 @@ module AOC2018
         end
       end
 
-      overlaps
+      [fabric, overlaps]
     end
 
     private
