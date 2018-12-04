@@ -26,5 +26,4 @@ class AOC2018::SliceItTest < Minitest::Test
     assert_equal 4, overlap_count
     assert_equal 3, @si.no_overlaps(CLAIMS, fabric)
   end
-
 end

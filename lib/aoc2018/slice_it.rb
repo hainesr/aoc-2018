@@ -10,7 +10,6 @@ require 'aoc2018'
 
 module AOC2018
   class SliceIt < Day
-
     def run
       input = read_input_file.split("\n").map(&:chomp)
       fabric, overlap_count = overlap(input)
@@ -50,9 +49,7 @@ module AOC2018
 
         (left...right).each do |x|
           (top...bottom).each do |y|
-            if fabric[x][y] != 1
-              overlaps = true
-            end
+            overlaps = true if fabric[x][y] != 1
           end
         end
 
@@ -70,6 +67,5 @@ module AOC2018
 
       [id[1..-1].to_i, left, left + width, top, top + height]
     end
-
   end
 end
