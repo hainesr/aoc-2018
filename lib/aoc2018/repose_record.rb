@@ -10,7 +10,6 @@ require 'aoc2018'
 
 module AOC2018
   class ReposeRecord < Day
-
     def run
       input = read_input_file.split("\n").map(&:chomp)
       records = merge_records(parse_records(input))
@@ -36,9 +35,7 @@ module AOC2018
       max = [0, -1, 0]
       records.each do |key, value|
         m = value.max
-        if m > max[1]
-          max = [key, m, value.index(m)]
-        end
+        max = [key, m, value.index(m)] if m > max[1]
       end
 
       max[0] * max[2]
@@ -75,7 +72,7 @@ module AOC2018
 
     def parse_record(record)
       bits = record.split
-      timestamp = bits[0..1].join[1..-2].gsub('-', '').gsub(':', '')
+      timestamp = bits[0..1].join[1..-2].delete('-').delete(':')
       state = if bits[2] == 'Guard'
                 bits[3][1..-1].to_i
               else
