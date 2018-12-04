@@ -22,7 +22,7 @@ module AOC2018
       overlaps = 0
 
       input.each do |line|
-        left, right, top, bottom = parse_claim(line)
+        _, left, right, top, bottom = parse_claim(line)
 
         (left...right).each do |x|
           fabric[x] = [] if fabric[x].nil?
@@ -44,11 +44,12 @@ module AOC2018
     private
 
     def parse_claim(input)
-      corner, size = input.split('@')[1].split(':').map(&:strip)
+      id, rest = input.split('@')
+      corner, size = rest.split(':').map(&:strip)
       left, top = corner.split(',').map(&:to_i)
       width, height = size.split('x').map(&:to_i)
 
-      [left, left + width, top, top + height]
+      [id[1..-1].to_i, left, left + width, top, top + height]
     end
 
   end
