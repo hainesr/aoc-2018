@@ -12,3 +12,11 @@ Style/Documentation:
 # Use brackets for defining word arrays.
 Style/WordArray:
   EnforcedStyle: brackets
+
+# Allow complex methods
+Metrics/AbcSize:
+  Max: 30
+
+# Allow long methods
+Metrics/MethodLength:
+  Max: 50
