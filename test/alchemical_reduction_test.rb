@@ -21,4 +21,17 @@ class AOC2018::AlchemicalReductionTest < Minitest::Test
     assert_equal 'aabAAB', @ar.reduction_reaction('aabAAB')
     assert_equal 'dabCBAcaDA', @ar.reduction_reaction('dabAcCaCBAcCcaDA')
   end
+
+  def test_reduced_polymer_reaction
+    assert_equal 'dbCBcD',
+                 @ar.reduction_reaction('dabAcCaCBAcCcaDA'.delete('aA'))
+    assert_equal 'daCAcaDA',
+                 @ar.reduction_reaction('dabAcCaCBAcCcaDA'.delete('bB'))
+    assert_equal 'daDA',
+                 @ar.reduction_reaction('dabAcCaCBAcCcaDA'.delete('cC'))
+    assert_equal 'abCBAc',
+                 @ar.reduction_reaction('dabAcCaCBAcCcaDA'.delete('dD'))
+
+    assert_equal 4, @ar.reduced_polymer_reaction('dabAcCaCBAcCcaDA')
+  end
 end
