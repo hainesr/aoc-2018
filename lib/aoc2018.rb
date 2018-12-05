@@ -19,7 +19,8 @@ module AOC2018
     'chronal_calibration',
     'inventory_management',
     'slice_it',
-    'repose_record'
+    'repose_record',
+    'alchemical_reduction'
   ].freeze
 
   def self.class_from_day(day)
