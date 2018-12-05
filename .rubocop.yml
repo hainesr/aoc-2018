@@ -17,6 +17,12 @@ Style/WordArray:
 Metrics/AbcSize:
   Max: 30
 
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
 # Allow long methods
 Metrics/MethodLength:
   Max: 50

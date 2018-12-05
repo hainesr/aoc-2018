@@ -32,12 +32,12 @@ module AOC2018
         if /[[:upper:]]/.match(unit[0]) && unit[1] == unit[0].downcase
           result.delete_at(i)
           result.delete_at(i)
-          i -= 1 if i > 0
+          i -= 1 if i.positive?
         else
           i += 1
         end
 
-        break if i > last_i || result.length == 0
+        break if i > last_i || result.empty?
       end
 
       result.join
