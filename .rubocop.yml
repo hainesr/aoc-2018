@@ -26,3 +26,7 @@ Metrics/PerceivedComplexity:
 # Allow long methods
 Metrics/MethodLength:
   Max: 50
+
+# Allow short param names.
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
