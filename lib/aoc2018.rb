@@ -20,7 +20,10 @@ module AOC2018
     'inventory_management',
     'slice_it',
     'repose_record',
-    'alchemical_reduction'
+    'alchemical_reduction',
+    nil,
+    nil,
+    'memory_maneuver'
   ].freeze
 
   def self.class_from_day(day)
