@@ -22,7 +22,7 @@ module AOC2018
     'repose_record',
     'alchemical_reduction',
     nil,
-    nil,
+    'sum_of_its_parts',
     'memory_maneuver'
   ].freeze
 
