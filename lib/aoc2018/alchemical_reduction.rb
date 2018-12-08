@@ -7,7 +7,6 @@
 # Public Domain
 
 require 'aoc2018'
-require 'set'
 
 module AOC2018
   class AlchemicalReduction < Day
