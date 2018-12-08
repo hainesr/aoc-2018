@@ -24,4 +24,8 @@ class AOC2018::MemoryManeuverTest < Minitest::Test
   def test_sum_metadata
     assert_equal 138, @mm.sum_metadata(@mm.read_tree(INPUT))
   end
+
+  def test_value
+    assert_equal 66, @mm.value(@mm.read_tree(INPUT))
+  end
 end

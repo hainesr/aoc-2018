@@ -15,6 +15,7 @@ module AOC2018
       tree = read_tree(input)
 
       puts "Part 1: #{sum_metadata(tree)}"
+      puts "Part 2: #{value(tree)}"
     end
 
     def sum_metadata((children, metadata))
@@ -22,6 +23,17 @@ module AOC2018
       sum += metadata.reduce(&:+)
       children.each do |c|
         sum += sum_metadata(c)
+      end
+
+      sum
+    end
+
+    def value((children, metadata))
+      return metadata.reduce(&:+) if children.empty?
+
+      sum = 0
+      metadata.each do |m|
+        sum += value(children[m - 1]) if m >= 1 && m <= children.length
       end
 
       sum
