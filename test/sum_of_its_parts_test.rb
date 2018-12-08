@@ -42,4 +42,10 @@ class AOC2018::SumOfItsPartsTest < Minitest::Test
 
     assert_equal 'CABDFE', @sp.order_steps(steps)
   end
+
+  def test_run_steps
+    steps = @sp.parse_steps(STEPS)
+
+    assert_equal 15, @sp.run_steps(steps, 2, 0)
+  end
 end
