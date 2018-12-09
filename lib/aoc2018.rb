@@ -23,7 +23,8 @@ module AOC2018
     'alchemical_reduction',
     nil,
     'sum_of_its_parts',
-    'memory_maneuver'
+    'memory_maneuver',
+    'marble_mania'
   ].freeze
 
   def self.class_from_day(day)
