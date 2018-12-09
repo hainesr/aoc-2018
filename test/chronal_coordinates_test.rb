@@ -34,7 +34,18 @@ class AOC2018::ChronalCoordinatesTest < Minitest::Test
     assert_nil @cc.closest(POINTS, 8, 6)
   end
 
+  def test_closest_within_sum
+    assert @cc.closest_within_sum?(POINTS, 4, 3, 32)
+    assert @cc.closest_within_sum?(POINTS, 6, 5, 32)
+    refute @cc.closest_within_sum?(POINTS, 4, 2, 32)
+    refute @cc.closest_within_sum?(POINTS, 0, 0, 32)
+  end
+
   def test_max_finite_area
     assert_equal 17, @cc.max_finite_area(POINTS)
+  end
+
+  def test_region_within_sum
+    assert_equal 16, @cc.region_within_sum(POINTS, 32)
   end
 end
