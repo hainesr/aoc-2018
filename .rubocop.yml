@@ -15,7 +15,7 @@ Style/WordArray:
 
 # Allow complex methods
 Metrics/AbcSize:
-  Max: 30
+  Max: 35
 
 Metrics/CyclomaticComplexity:
   Max: 10
@@ -29,4 +29,8 @@ Metrics/MethodLength:
 
 # Allow short param names.
 Naming/UncommunicativeMethodParamName:
+  Enabled: false
+
+# Allow chaining blocks for solution efficiency.
+Style/MultilineBlockChain:
   Enabled: false
