@@ -12,11 +12,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'aoc2018/extra/cli'
 
-day = AOC2018::Extra::CLI.parse_params(ARGV)
+days = AOC2018::Extra::CLI.parse_params(ARGV)
 
-unless day
+unless days
   warn 'Usage: aoc-2018 <day>'
   exit 1
 end
 
-AOC2018::Extra::CLI.run_day(day)
+days.each do |day|
+  AOC2018::Extra::CLI.run_day(day)
+end

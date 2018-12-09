@@ -12,11 +12,11 @@ module AOC2018
   module Extra
     module CLI
       def self.parse_params(argv)
-        day = argv[0].to_i
+        return false if argv.empty?
 
-        return false if day < 1 || day > 25
-
-        day
+        argv.map(&:to_i).each do |day|
+          return false if day < 1 || day > 25
+        end
       end
 
       def self.run_day(day)

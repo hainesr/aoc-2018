@@ -15,8 +15,13 @@ class AOC2018::CLITest < Minitest::Test
       refute ::AOC2018::Extra::CLI.parse_params([p])
     end
 
+    refute ::AOC2018::Extra::CLI.parse_params([])
+
     ['1', '2', '25'].each do |p|
-      assert_equal p.to_i, ::AOC2018::Extra::CLI.parse_params([p])
+      assert_equal [p.to_i], ::AOC2018::Extra::CLI.parse_params([p])
     end
+
+    assert_equal [1, 2, 25],
+                 ::AOC2018::Extra::CLI.parse_params(['1', '2', '25'])
   end
 end
