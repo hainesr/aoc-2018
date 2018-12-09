@@ -73,7 +73,7 @@ module AOC2018
     end
 
     def closest_within_sum?(points, x, y, sum)
-      points.reduce(0) { |sum, p| sum + manhattan(p, [x, y]) } < sum
+      points.reduce(0) { |s, p| s + manhattan(p, [x, y]) } < sum
     end
   end
 end
