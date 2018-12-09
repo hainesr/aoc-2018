@@ -10,21 +10,13 @@
 lib = ::File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'aoc2018'
+require 'aoc2018/extra/cli'
 
-DAY = ARGV[0].to_i
+day = AOC2018::Extra::CLI.parse_params(ARGV)
 
-if DAY < 1 || DAY > 25
+unless day
   warn 'Usage: aoc-2018 <day>'
   exit 1
 end
 
-solution = AOC2018::DAY_MAP[DAY]
-
-begin
-  require ::File.join('aoc2018', solution)
-rescue StandardError
-  solution = 'day'
-end
-
-AOC2018.class_from_day(solution).new.run
+AOC2018::Extra::CLI.run_day(day)
