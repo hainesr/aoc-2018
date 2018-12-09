@@ -21,7 +21,7 @@ module AOC2018
     'slice_it',
     'repose_record',
     'alchemical_reduction',
-    nil,
+    'chronal_coordinates',
     'sum_of_its_parts',
     'memory_maneuver',
     'marble_mania'
