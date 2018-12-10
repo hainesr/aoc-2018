@@ -24,7 +24,8 @@ module AOC2018
     'chronal_coordinates',
     'sum_of_its_parts',
     'memory_maneuver',
-    'marble_mania'
+    'marble_mania',
+    'stars_align'
   ].freeze
 
   def self.class_from_day(day)
