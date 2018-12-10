@@ -91,6 +91,8 @@ class AOC2018::StarsAlignTest < Minitest::Test
 
   def test_align
     aligned = @sa.align(@sa.read_points(POINTS), 7)
-    assert_equal OUTPUT, @sa.output(aligned)
+
+    assert_equal OUTPUT, @sa.output(aligned[0])
+    assert_equal 3, aligned[1]
   end
 end

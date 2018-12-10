@@ -13,8 +13,10 @@ module AOC2018
     def run
       input = read_input_file.chomp.split("\n")
       points = read_points(input)
+      aligned = align(points)
 
-      puts "Part 1:\n#{output(align(points))}"
+      puts "Part 1:\n#{output(aligned[0])}"
+      puts "Part 2: #{aligned[1]}"
     end
 
     def read_points(input)
@@ -22,6 +24,7 @@ module AOC2018
     end
 
     def align(points, height = 9)
+      i = 0
       loop do
         points.map! do |x, y, dx, dy|
           [x + dx, y + dy, dx, dy]
@@ -30,7 +33,8 @@ module AOC2018
         min_y = points.min_by { |p| p[1] }[1]
         max_y = points.max_by { |p| p[1] }[1]
 
-        return points if max_y - min_y == height
+        i += 1
+        return [points, i] if max_y - min_y == height
       end
     end
 
