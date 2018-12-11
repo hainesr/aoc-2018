@@ -22,7 +22,14 @@ class AOC2018::ChronalChargeTest < Minitest::Test
   end
 
   def test_find_largest_region
-    assert_equal [29, [33, 45]], @cc.find_largest_region(@cc.populate_grid(18))
-    assert_equal [30, [21, 61]], @cc.find_largest_region(@cc.populate_grid(42))
+    grid18 = @cc.populate_grid(18)
+    grid42 = @cc.populate_grid(42)
+
+    assert_equal [29, 3, [33, 45]], @cc.find_largest_region(grid18)
+    assert_equal [30, 3, [21, 61]], @cc.find_largest_region(grid42)
+
+    # Skip these tests for now as they take ages :-(
+    # assert_equal [113, 16, [90, 269]], @cc.find_highest_power(grid18)
+    # assert_equal [119, 12, [232, 251]], @cc.find_highest_power(grid42)
   end
 end

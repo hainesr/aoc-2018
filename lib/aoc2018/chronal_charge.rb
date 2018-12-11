@@ -14,12 +14,15 @@ module AOC2018
       grid = populate_grid(8141)
 
       region3 = find_largest_region(grid)
-      puts "Part 1: #{region3[1][0]},#{region3[1][1]}"
+      puts "Part 1: #{region3[2][0]},#{region3[2][1]}"
+
+      regionX = find_highest_power(grid)
+      puts "Part 2: #{regionX[2][0]},#{regionX[2][1]},#{regionX[1]}"
     end
 
     def find_largest_region(grid, width = 3)
       last_i = 300 - (width - 1)
-      max = [0, [0, 0]]
+      max = [0, 0, [0, 0]]
 
       (1..last_i).map do |y|
         (1..last_i).map do |x|
@@ -27,11 +30,17 @@ module AOC2018
             column[(x - 1)...(x - 1 + width)]
           end.flatten.sum
 
-          max = [p, [x, y]] if p > max[0]
+          max = [p, width, [x, y]] if p > max[0]
         end
       end
 
       max
+    end
+
+    def find_highest_power(grid, max_region = 20)
+      (2..max_region).map do |width|
+        find_largest_region(grid, width)
+      end.max_by { |m| m[0] }
     end
 
     def cell_power_level(x, y, serial)
