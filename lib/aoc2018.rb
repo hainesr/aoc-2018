@@ -25,7 +25,8 @@ module AOC2018
     'sum_of_its_parts',
     'memory_maneuver',
     'marble_mania',
-    'stars_align'
+    'stars_align',
+    'chronal_charge'
   ].freeze
 
   def self.class_from_day(day)
