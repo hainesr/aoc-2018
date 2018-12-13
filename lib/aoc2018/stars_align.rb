@@ -45,7 +45,7 @@ module AOC2018
       max_y = points.max_by { |p| p[1] }[1]
 
       matrix = {}
-      points.each { |x, y, dx, dy| matrix[[x, y]] = true }
+      points.each { |x, y, _, _| matrix[[x, y]] = true }
 
       out = ''
       (min_y..max_y).each do |y|

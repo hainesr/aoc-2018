@@ -79,7 +79,14 @@ class AOC2018::StarsAlignTest < Minitest::Test
   ].freeze
 
   OUTPUT =
-  "#   #  ###\n#   #   # \n#   #   # \n#####   # \n#   #   # \n#   #   # \n#   #   # \n#   #  ###\n"
+    "#   #  ###\n" \
+    "#   #   # \n" \
+    "#   #   # \n" \
+    "#####   # \n" \
+    "#   #   # \n" \
+    "#   #   # \n" \
+    "#   #   # \n" \
+    "#   #  ###\n"
 
   def setup
     @sa = ::AOC2018::StarsAlign.new
