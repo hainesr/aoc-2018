@@ -16,8 +16,8 @@ module AOC2018
       region3 = find_largest_region(grid)
       puts "Part 1: #{region3[2][0]},#{region3[2][1]}"
 
-      regionX = find_highest_power(grid)
-      puts "Part 2: #{regionX[2][0]},#{regionX[2][1]},#{regionX[1]}"
+      region_x = find_highest_power(grid)
+      puts "Part 2: #{region_x[2][0]},#{region_x[2][1]},#{region_x[1]}"
     end
 
     def find_largest_region(grid, width = 3)
