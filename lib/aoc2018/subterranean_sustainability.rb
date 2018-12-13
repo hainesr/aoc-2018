@@ -12,14 +12,18 @@ module AOC2018
   class SubterraneanSustainability < Day
     def run
       input = read_input_file.chomp.split("\n")
-      gen = initial_state(input)
+      state = initial_state(input)
       r = rules(input)
 
+      gen = state.dup
       20.times do
         gen = next_gen(gen, r)
       end
 
       puts "Part 1: #{sum_state(gen)}"
+
+      (state, gen) = find_stability(state, r)
+      puts "Part 2: #{sum_state(state, 50_000_000_000 - gen)}"
     end
 
     def initial_state(input)
@@ -56,9 +60,24 @@ module AOC2018
       [new_state[0..new_state.rindex('#')], index]
     end
 
-    def sum_state((state, index))
+    def find_stability(state, rules)
+      gen = 0
+      saved = state[0][state[1].abs..state[0].rindex('#')]
+
+      loop do
+        state = next_gen(state, rules)
+        gen += 1
+        test = state[0][state[0].index('#')..state[0].rindex('#')]
+
+        return [state, gen] if test == saved
+
+        saved = test
+      end
+    end
+
+    def sum_state((state, index), base = 0)
       state.chars.reduce(0) do |sum, c|
-        sum += (c == '#' ? index : 0)
+        sum += (c == '#' ? index + base : 0)
         index += 1
 
         sum
