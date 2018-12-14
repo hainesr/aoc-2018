@@ -27,7 +27,9 @@ module AOC2018
     'marble_mania',
     'stars_align',
     'chronal_charge',
-    'subterranean_sustainability'
+    'subterranean_sustainability',
+    nil,
+    'chocolate_charts'
   ].freeze
 
   def self.class_from_day(day)
