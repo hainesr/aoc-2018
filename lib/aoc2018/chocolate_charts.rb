@@ -13,7 +13,7 @@ module AOC2018
     def run
       scores = practice_scores(16_000_000)
 
-      puts "Part 1: #{next_ten(635041, scores)}"
+      puts "Part 1: #{next_ten(635_041, scores)}"
       puts "Part 2: #{find_sequence_index('635041', scores)}"
     end
 
