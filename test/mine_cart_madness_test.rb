@@ -19,6 +19,16 @@ class AOC2018::MineCartMadnessTest < Minitest::Test
     '  \\------/   '
   ].freeze
 
+  MAP2 = [
+    '/>-<\\  ',
+    '|   |  ',
+    '| /<+-\\',
+    '| | | v',
+    '\\>+</ |',
+    '  |   ^',
+    '  \\<->/'
+  ].freeze
+
   def setup
     @mcm = ::AOC2018::MineCartMadness.new
   end
@@ -47,5 +57,11 @@ class AOC2018::MineCartMadnessTest < Minitest::Test
     (map, carts) = @mcm.read_map(MAP)
 
     assert_equal [7, 3], @mcm.sim(map, carts)
+  end
+
+  def test_sim_remove
+    (map, carts) = @mcm.read_map(MAP2)
+
+    assert_equal [6, 4], @mcm.sim(map, carts, true)
   end
 end
