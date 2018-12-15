@@ -28,7 +28,7 @@ module AOC2018
     'stars_align',
     'chronal_charge',
     'subterranean_sustainability',
-    nil,
+    'mine_cart_madness',
     'chocolate_charts'
   ].freeze
 
