@@ -29,7 +29,9 @@ module AOC2018
     'chronal_charge',
     'subterranean_sustainability',
     'mine_cart_madness',
-    'chocolate_charts'
+    'chocolate_charts',
+    nil,
+    'chronal_classification'
   ].freeze
 
   def self.class_from_day(day)
