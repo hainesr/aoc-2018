@@ -31,14 +31,34 @@ module AOC2018
 
     def run
       input = read_input_file.chomp.split("\n")
+      part1, op_map = map_instructions(input)
 
-      puts "Part 1: #{count_instructions(input)}"
+      puts "Part 1: #{part1}"
+
+      registers = run_program(input, op_map)
+      puts "Part 2: #{registers.first}"
     end
 
-    def count_instructions(input)
-      last_test_line = input.rindex { |line| line.start_with?('After: ') }
+    def run_program(input, op_map)
+      registers = [0, 0, 0, 0]
+      first_line = input.rindex { |line| line.start_with?('After: ') } + 4
 
-      input[0..last_test_line].each_slice(4).count do |before, op, after, _|
+      input[first_line..-1].each do |line|
+        op, a, b, c = line.split.map(&:to_i)
+
+        INSTRUCTIONS[op_map[op]][registers, a, b, c]
+      end
+
+      registers
+    end
+
+    def map_instructions(input, map = true)
+      last_line = input.rindex { |line| line.start_with?('After: ') }
+      possible_map = (0..15).each_with_object({}) do |num, hash|
+        hash[num] = INSTRUCTIONS.keys
+      end
+
+      part1 = input[0..last_line].each_slice(4).count do |before, op, after, _|
         before = before.scan(/\d+/).map(&:to_i)
         op, a, b, c = op.split.map(&:to_i)
         after = after.scan(/\d+/).map(&:to_i)
@@ -49,9 +69,27 @@ module AOC2018
           regs == after
         end
 
+        # Cut down the possibilities for each op.
+        possible_map[op] &= match.keys
+
         # '.count' above will count the number of loops that return 'true'.
         match.size >= 3
       end
+
+      return part1 unless map
+
+      op_map = {}
+      until op_map.length == 16 do
+        possible_map.select { |_, codes| codes.length == 1 }.each do |num, code|
+          op_map[num] = code[0]
+
+          possible_map.each do |_, v|
+            op_map.values.each { |o| v.delete(o) }
+          end
+        end
+      end
+
+      [part1, op_map]
     end
   end
 end

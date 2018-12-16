@@ -21,7 +21,7 @@ class AOC2018::ChronalClassificationTest < Minitest::Test
     @cc = ::AOC2018::ChronalClassification.new
   end
 
-  def test_count_instructions
-    assert_equal 1, @cc.count_instructions(TEST)
+  def test_map_instructions
+    assert_equal 1, @cc.map_instructions(TEST, false)
   end
 end
