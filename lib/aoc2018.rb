@@ -31,7 +31,9 @@ module AOC2018
     'mine_cart_madness',
     'chocolate_charts',
     nil,
-    'chronal_classification'
+    'chronal_classification',
+    nil,
+    'north_pole_settlers'
   ].freeze
 
   def self.class_from_day(day)
