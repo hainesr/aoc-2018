@@ -16,6 +16,19 @@ module AOC2018
 
       10.times { map = tick(map) }
       puts "Part 1: #{calculate_resources(map)}"
+
+      # Part 2 solved by looking for repetition in the resources calculation,
+      # then calculating the period of repetition - for my input: 28.
+      #
+      # 1_000_000_000 % 28 = 20
+      # So any other iteration, i, modulo 28 that equals 20 should match.
+      #
+      # 1_000 % 28 = 20
+      # At iteration 1000, the calculated resources value is: 191080
+
+      # map = load_map(input)
+      # find_pattern(map)
+      puts 'Part 2: 191080'
     end
 
     def tick(map)
@@ -40,6 +53,14 @@ module AOC2018
       end
 
       new_map
+    end
+
+    def find_pattern(map)
+      (1..1000).each do |i|
+        map = tick(map)
+
+        puts "#{i}: #{calculate_resources(map)} - #{i} % 28 = #{i % 28}"
+      end
     end
 
     def calculate_resources(map)
