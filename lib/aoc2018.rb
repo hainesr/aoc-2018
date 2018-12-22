@@ -33,7 +33,11 @@ module AOC2018
     nil,
     'chronal_classification',
     nil,
-    'north_pole_settlers'
+    'north_pole_settlers',
+    nil,
+    nil,
+    nil,
+    'mode_maze'
   ].freeze
 
   def self.class_from_day(day)
