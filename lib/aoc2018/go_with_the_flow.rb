@@ -14,8 +14,19 @@ module AOC2018
     def run
       input = read_input_file.chomp.split("\n")
 
-      registers = run_program(input)
-      puts "Part 1: #{registers[0]}"
+      # registers = run_program(input)
+
+      # Inputs to sim_program are obtained by peeking at register[2] when
+      # the instruction pointer is 2 for the first time.
+      puts "Part 1: #{sim_program(905)}"
+      puts "Part 2: #{sim_program(10551305)}"
+    end
+
+    # The input program seems to add up the divisors of a number, n.
+    def sim_program(n)
+      (1..n).reduce(0) do |acc, i|
+        acc = (n % i == 0) ? acc + i : acc
+      end
     end
 
     def run_program(input)
