@@ -34,7 +34,7 @@ module AOC2018
     'chronal_classification',
     nil,
     'north_pole_settlers',
-    nil,
+    'go_with_the_flow',
     nil,
     nil,
     'mode_maze'
