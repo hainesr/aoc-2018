@@ -37,7 +37,8 @@ module AOC2018
     'go_with_the_flow',
     nil,
     nil,
-    'mode_maze'
+    'mode_maze',
+    'experimental_emergency_teleportation'
   ].freeze
 
   def self.class_from_day(day)
