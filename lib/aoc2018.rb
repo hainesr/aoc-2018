@@ -38,7 +38,9 @@ module AOC2018
     nil,
     nil,
     'mode_maze',
-    'experimental_emergency_teleportation'
+    'experimental_emergency_teleportation',
+    nil,
+    'four_dimensional_adventure'
   ].freeze
 
   def self.class_from_day(day)
