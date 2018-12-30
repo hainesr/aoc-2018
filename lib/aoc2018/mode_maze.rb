@@ -10,7 +10,6 @@ require 'aoc2018'
 
 module AOC2018
   class ModeMaze < Day
-
     def initialize(depth = 10_689, target = [11, 722])
       @depth = depth
       @target = target
@@ -35,11 +34,11 @@ module AOC2018
     end
 
     def erosion_index(x, y)
-      return @e_index[[x, y]] if !@e_index[[x, y]].nil?
+      return @e_index[[x, y]] unless @e_index[[x, y]].nil?
 
-      g = if y == 0
+      g = if y.zero?
             x * 16_807
-          elsif x == 0
+          elsif x.zero?
             y * 48_271
           else
             erosion_index(x - 1, y) * erosion_index(x, y - 1)
