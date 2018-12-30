@@ -15,7 +15,7 @@ class AOC2018::ChronalClassificationTest < Minitest::Test
     '9 2 1 2',
     'After:  [3, 2, 2, 1]',
     ''
-  ]
+  ].freeze
 
   def setup
     @cc = ::AOC2018::ChronalClassification.new

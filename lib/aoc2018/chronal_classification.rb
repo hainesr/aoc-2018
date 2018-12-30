@@ -79,7 +79,7 @@ module AOC2018
       return part1 unless map
 
       op_map = {}
-      until op_map.length == 16 do
+      until op_map.length == 16
         possible_map.select { |_, codes| codes.length == 1 }.each do |num, code|
           op_map[num] = code[0]
 
