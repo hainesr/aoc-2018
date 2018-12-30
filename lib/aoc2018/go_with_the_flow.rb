@@ -12,20 +12,20 @@ require 'aoc2018/chronal_classification'
 module AOC2018
   class GoWithTheFlow < ChronalClassification
     def run
-      input = read_input_file.chomp.split("\n")
+      # input = read_input_file.chomp.split("\n")
 
       # registers = run_program(input)
 
       # Inputs to sim_program are obtained by peeking at register[2] when
       # the instruction pointer is 2 for the first time.
       puts "Part 1: #{sim_program(905)}"
-      puts "Part 2: #{sim_program(10551305)}"
+      puts "Part 2: #{sim_program(10_551_305)}"
     end
 
     # The input program seems to add up the divisors of a number, n.
     def sim_program(n)
       (1..n).reduce(0) do |acc, i|
-        acc = (n % i == 0) ? acc + i : acc
+        (n % i).zero? ? acc + i : acc
       end
     end
 
@@ -44,7 +44,7 @@ module AOC2018
         INSTRUCTIONS[op][registers, a, b, c]
         ip = registers[ip_reg]
         ip += 1
-        break if ip < 0 || ip >= last_i
+        break if ip.negative? || ip >= last_i
       end
 
       registers
