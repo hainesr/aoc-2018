@@ -10,7 +10,7 @@ require 'test_helper'
 require 'aoc2018/extra/union_find'
 
 class AOC2018::UnionFindTest < Minitest::Test
-  DATA = %i(a b c d e f g)
+  DATA = %i[a b c d e f g].freeze
 
   def setup
     @uf = ::AOC2018::Extra::UnionFind.new(DATA)
