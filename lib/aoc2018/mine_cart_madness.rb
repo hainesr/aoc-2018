@@ -45,27 +45,24 @@ module AOC2018
       puts "Part 2: #{crash[0]},#{crash[1]}"
     end
 
+    # rubocop:disable Metrics/AbcSize, Metrics/BlockLength, Lint/EmptyWhen
     def sim(map, carts, remove = false)
       loop do
         carts.sort.each do |cart|
           x = cart.x + cart.xv
           y = cart.y + cart.yv
-          collide = carts.find{ |c| c.x == x && c.y == y }
+          collide = carts.find { |c| c.x == x && c.y == y }
 
           if collide
-            if remove
-              carts.delete(cart)
-              carts.delete(collide)
+            return [x, y] unless remove
 
-              if carts.length == 1
-                if carts[0].tick
-                  return [carts[0].x, carts[0].y]
-                else
-                  return [carts[0].x + carts[0].xv, carts[0].y + carts[0].yv]
-                end
-              end
-            else
-              return [x, y]
+            carts.delete(cart)
+            carts.delete(collide)
+
+            if carts.length == 1
+              return [carts[0].x, carts[0].y] if carts[0].tick
+
+              return [carts[0].x + carts[0].xv, carts[0].y + carts[0].yv]
             end
           end
 
@@ -95,6 +92,7 @@ module AOC2018
         carts.each { |c| c.tick = false }
       end
     end
+    # rubocop:enable Metrics/AbcSize, Metrics/BlockLength, Lint/EmptyWhen
 
     def read_map(input)
       carts = []

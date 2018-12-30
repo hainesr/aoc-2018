@@ -45,7 +45,7 @@ class AOC2018::MineCartMadnessTest < Minitest::Test
   end
 
   def test_read_map
-    (map, carts) = @mcm.read_map(MAP)
+    (_, carts) = @mcm.read_map(MAP)
 
     assert_equal 2, carts[0].x
     assert_equal 0, carts[0].y
