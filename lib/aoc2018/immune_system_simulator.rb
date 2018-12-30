@@ -49,9 +49,12 @@ module AOC2018
 
     def run
       input = read_input_file.chomp.split("\n")
-      groups = read_input(input)
 
+      groups = read_input(input)
       puts "Part 1: #{play(groups)}"
+
+      groups = read_input(input)
+      puts "Part 2: #{play_with_boost(groups)}"
     end
 
     def play(groups)
@@ -70,6 +73,23 @@ module AOC2018
       end
 
       groups.reduce(0) { |sum, g| g.alive? ? sum + g.units : sum }
+    end
+
+    def play_with_boost(groups)
+      remaining = 0
+
+      # It seems that a boost of 33 results in a deadlock.
+      34.step do |boost|
+        boosted_groups = groups.map { |g| g.dup }
+        boosted_groups.each do |g|
+          g.attack = g.attack + boost if g.side == :immune_system
+        end
+
+        remaining = play(boosted_groups)
+        if boosted_groups.all? { |g| g.alive? && g.side == :immune_system }
+          return remaining
+        end
+      end
     end
 
     def choose_targets(groups)

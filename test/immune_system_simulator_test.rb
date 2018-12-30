@@ -58,6 +58,11 @@ class AOC2018::ImmuneSystemSimulatorTest < Minitest::Test
     assert_equal 5216, @iss.play(groups)
   end
 
+  def test_play_with_boost
+    groups = @iss.read_input(GROUPS)
+    assert_equal 51, @iss.play_with_boost(groups)
+  end
+
   def check_group(expected, actual)
     %i[side units hp weak immune attack damage init power].each do |atr|
       assert_equal expected.send(atr), actual.send(atr)
