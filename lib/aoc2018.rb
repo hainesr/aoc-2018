@@ -39,7 +39,7 @@ module AOC2018
     nil,
     'mode_maze',
     'experimental_emergency_teleportation',
-    nil,
+    'immune_system_simulator',
     'four_dimensional_adventure'
   ].freeze
 
