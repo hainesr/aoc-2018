@@ -15,13 +15,13 @@ Style/WordArray:
 
 # Allow complex methods
 Metrics/AbcSize:
-  Max: 35
+  Max: 50
 
 Metrics/CyclomaticComplexity:
-  Max: 10
+  Max: 20
 
 Metrics/PerceivedComplexity:
-  Max: 10
+  Max: 20
 
 # Allow long methods
 Metrics/MethodLength:
